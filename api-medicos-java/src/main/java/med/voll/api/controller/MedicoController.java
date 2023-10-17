@@ -24,10 +24,11 @@ public class MedicoController {
 
     @CrossOrigin
     @GetMapping
-    public Page<DadosListagemMedico> listar(@PageableDefault(size = 10, sort = {"nome"}) Pageable paginacao) {
+    public Page<DadosListagemMedico> listar(@PageableDefault(size = 100, sort = {"nome"}) Pageable paginacao) {
         return repository.findAllByAtivoTrue(paginacao).map(DadosListagemMedico::new);
     }
 
+    @CrossOrigin
     @PutMapping
     @Transactional
     public void atualizar(@RequestBody @Valid DadosAtualizacaoMedico dados) {
@@ -44,4 +45,53 @@ public class MedicoController {
     }
 
 
+
+    @CrossOrigin
+    @GetMapping ("/{id}")
+    public String buscaPorId(@PathVariable Long id) {
+        return "oi";
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
