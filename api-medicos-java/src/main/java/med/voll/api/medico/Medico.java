@@ -1,19 +1,17 @@
 package med.voll.api.medico;
+import lombok.*;
+import org.springframework.data.domain.Page;
 import org.springframework.lang.Nullable;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
 import med.voll.api.endereco.Endereco;
 
 @Table(name = "medicos")
 @Entity(name = "Medico")
-@Getter
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
-public class Medico {
+public class Medico  {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
