@@ -1,6 +1,5 @@
-package med.voll.api.medico;
+package med.voll.api.medico;s
 import lombok.*;
-import org.springframework.data.domain.Page;
 import org.springframework.lang.Nullable;
 import jakarta.persistence.*;
 import med.voll.api.endereco.Endereco;
@@ -11,10 +10,12 @@ import med.voll.api.endereco.Endereco;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
+@Getter
 public class Medico  {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String nome;
     private String email;
 

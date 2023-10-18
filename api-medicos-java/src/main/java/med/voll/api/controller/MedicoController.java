@@ -1,5 +1,6 @@
 package med.voll.api.controller;
 
+import jakarta.persistence.EntityNotFoundException;
 import jakarta.validation.Valid;
 import med.voll.api.medico.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,8 +52,10 @@ public class MedicoController {
 
     @CrossOrigin
     @GetMapping("/{id}")
-    public ResponseEntity<String> buscaPorId(@PathVariable Long id) {
-        try {
+    public ResponseEntity<Medico> buscaPorId(@PathVariable Long id) {
+        Medico medico = repository.findById(id).orElseThrow(() -> new EntityNotFoundException("Não encontrado"));
+        return ResponseEntity.ok().body(medico);
+        /* try {
             Medico medico = repository.getReferenceById(id);
             if (medico != null) {
                 return ResponseEntity.ok(medico.toString());
@@ -62,8 +65,10 @@ public class MedicoController {
         } catch (Exception ex) {
             // Tratar exceção apropriadamente
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Erro interno do servidor");
-        }
+        } */
     }
+
+
 
 }
 
