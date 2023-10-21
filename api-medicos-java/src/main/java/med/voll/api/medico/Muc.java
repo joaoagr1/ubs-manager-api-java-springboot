@@ -7,36 +7,36 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "alergias")
-public class Alergias {
+@Table(name = "muc")
+public class Muc {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_conjunto;
+    private Long id;
 
     private Long identificador;
-    private String alergias;
+    private String muc;
 
     // Construtores, getters e setters
 
-    public Alergias() {
+    public Muc() {
         // Construtor vazio
     }
 
-    public Alergias(Long id, String alergia) {
+    public Muc(Long id, String muc) {
         this.identificador = id;
-        this.alergias = alergia;
+        this.muc = muc;
     }
 
 
-    public void setIdentificador(Long identificador) {
-        this.identificador = identificador;
+    public void setId(Long id) {
+        this.identificador = id;
     }
 
-    public String getAlergia() {
-        return alergias;
+    public String getMuc() {
+        return muc;
     }
 
-    public void setAlergia(String alergia) {
-        this.alergias = alergia;
+    public void setMuc(String muc) {
+        this.muc = muc;
     }
 }
