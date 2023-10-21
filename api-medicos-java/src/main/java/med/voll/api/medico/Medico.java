@@ -1,4 +1,4 @@
-package med.voll.api.medico;s
+package med.voll.api.medico;
 import lombok.*;
 import org.springframework.lang.Nullable;
 import jakarta.persistence.*;
@@ -11,7 +11,7 @@ import med.voll.api.endereco.Endereco;
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
 @Getter
-public class Medico  {
+public class  Medico  {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
