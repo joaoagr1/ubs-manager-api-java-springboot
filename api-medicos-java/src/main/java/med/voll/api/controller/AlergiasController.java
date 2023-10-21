@@ -12,6 +12,7 @@ public class AlergiasController {
     @Autowired
     private AlergiasRepository alergiasRepository;
 
+    @CrossOrigin
     @GetMapping("/identificador")
     public List<Alergias> buscarPorIdentificador(@RequestParam Long identificador) {
         return alergiasRepository.findByIdentificador(identificador);
