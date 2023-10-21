@@ -3,6 +3,7 @@ import med.voll.api.medico.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -11,8 +12,9 @@ public class AlergiasController {
     @Autowired
     private AlergiasRepository alergiasRepository;
 
-    @GetMapping("/{id}")
-    public Optional<Alergias> buscarPorIdMedico(@PathVariable Long id) {
-        return alergiasRepository.findById(id);
+    @GetMapping("/identificador")
+    public List<Alergias> buscarPorIdentificador(@RequestParam Long identificador) {
+        return alergiasRepository.findByIdentificador(identificador);
     }
+
 }

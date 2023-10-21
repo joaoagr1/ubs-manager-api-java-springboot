@@ -11,7 +11,9 @@ import jakarta.persistence.Table;
 public class Alergias {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long id_conjunto;
+
+    private Long identificador;
     private String alergias;
 
     // Construtores, getters e setters
@@ -21,13 +23,13 @@ public class Alergias {
     }
 
     public Alergias(Long id, String alergia) {
-        this.id = id;
+        this.identificador = id;
         this.alergias = alergia;
     }
 
 
     public void setId(Long id) {
-        this.id = id;
+        this.identificador = id;
     }
 
     public String getAlergia() {
