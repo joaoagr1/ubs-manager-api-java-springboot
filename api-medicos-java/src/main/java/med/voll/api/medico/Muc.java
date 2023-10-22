@@ -28,7 +28,7 @@ public class Muc {
     }
 
 
-    public void setId(Long id) {
+    public void setIdentificador(Long id) {
         this.identificador = id;
     }
 
