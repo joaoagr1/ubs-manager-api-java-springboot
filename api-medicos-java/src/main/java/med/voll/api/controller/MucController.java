@@ -29,4 +29,17 @@ public class MucController {
         return "Registro de alergia inserido com sucesso!";
     }
 
-}
+
+
+    @DeleteMapping()
+    @Transactional
+    @CrossOrigin
+    public void excluirMuc(@RequestParam Long identificador, @RequestParam String muc) {
+        List<Muc> muc1 = mucRepository.findByIdentificadorAndMuc(identificador, muc);
+
+        muc1.forEach(result -> {
+            mucRepository.delete(result);
+        });
+
+
+    }}

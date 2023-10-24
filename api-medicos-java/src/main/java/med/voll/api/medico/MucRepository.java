@@ -10,4 +10,7 @@ public interface MucRepository extends JpaRepository<Muc, Long> {
 
     List<Muc> findByIdentificador(Long id);
 
+    List<Muc> findByIdentificadorAndMuc(Long identificador, String muc);
+
+
 }

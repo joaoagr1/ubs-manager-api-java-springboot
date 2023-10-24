@@ -1,6 +1,7 @@
 package med.voll.api.controller;
 import med.voll.api.medico.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
@@ -32,9 +33,26 @@ public class AlergiasController {
     }
 
 
+    @DeleteMapping()
+    @Transactional
+    @CrossOrigin
+    public void excluirAlergia(@RequestParam Long identificador, @RequestParam String alergias) {
+        List<Alergias> alergia = alergiasRepository.findByIdentificadorAndAlergias(identificador,alergias);
 
+        alergia.forEach(result -> {
+            alergiasRepository.delete(result);
+        });
 
-
+    }
 
 
 }
+
+
+
+
+
+
+
+
+

@@ -6,7 +6,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-@Entity
+@Entity(name = "Alergias")
 @Table(name = "alergias")
 public class Alergias {
     @Id
@@ -27,6 +27,11 @@ public class Alergias {
         this.alergias = alergia;
     }
 
+    public static Alergias get() {
+        return null;
+    };
+
+
 
     public void setIdentificador(Long identificador) {
         this.identificador = identificador;
@@ -39,4 +44,9 @@ public class Alergias {
     public void setAlergia(String alergia) {
         this.alergias = alergia;
     }
+
+    public void excluirAlergias() {
+
+    }
 }
+

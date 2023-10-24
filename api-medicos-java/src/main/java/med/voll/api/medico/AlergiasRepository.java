@@ -10,4 +10,7 @@ public interface AlergiasRepository extends JpaRepository<Alergias, Long> {
 
     List<Alergias> findByIdentificador(Long id);
 
+    List<Alergias> findByIdentificadorAndAlergias(Long identificador, String alergias);
+    
+
 }
